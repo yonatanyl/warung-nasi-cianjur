@@ -137,64 +137,7 @@ menuTabs.forEach(tab => {
     });
 });
 
-// Google Maps initialization
-function initMap() {
-    // Restaurant location coordinates (Bandung example)
-    const restaurantLocation = { lat: -6.900344, lng: 107.618136 };
-    
-    const map = new google.maps.Map(document.getElementById("restaurantMap"), {
-        zoom: 15,
-        center: restaurantLocation,
-        styles: [
-            {
-                "featureType": "water",
-                "elementType": "geometry",
-                "stylers": [{"color": "#3E94A5"}]
-            },
-            {
-                "featureType": "landscape",
-                "elementType": "geometry",
-                "stylers": [{"color": "#f5f5f5"}]
-            }
-        ]
-    });
-    
-    const marker = new google.maps.Marker({
-        position: restaurantLocation,
-        map: map,
-        title: "Warung Nasi Raosan Deui - Cabang Utama",
-        icon: {
-            url: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="#C9231F">
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                </svg>
-            `),
-            scaledSize: new google.maps.Size(40, 40)
-        }
-    });
-    
-    const infoWindow = new google.maps.InfoWindow({
-        content: `
-            <div style="padding: 10px; font-family: 'Poppins', sans-serif;">
-                <h3 style="color: #3E94A5; margin: 0 0 10px 0;">Warung Nasi Raosan Deui</h3>
-                <p style="margin: 5px 0; color: #666;">📍 Jl. Cihampelas No. 123, Bandung</p>
-                <p style="margin: 5px 0; color: #666;">⏰ 08:00 - 22:00 WIB</p>
-                <p style="margin: 5px 0; color: #666;">📞 (022) 123-4567</p>
-            </div>
-        `
-    });
-    
-    marker.addListener("click", () => {
-        infoWindow.open(map, marker);
-    });
-}
 
-// Open directions function
-function openDirections() {
-    const destination = "-6.8275124,107.1262816"; // Koordinat Warung Nasi Raosan Deui
-    const url = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(destination)}`;
-    window.open(url, '_blank');
-}
 
 // Review System
 const reviewForm = document.getElementById('reviewForm');
@@ -443,12 +386,7 @@ function removeNotification(notification) {
     }, 300);
 }
 
-// Initialize Google Map when page loads
-window.addEventListener('load', () => {
-    if (typeof google !== 'undefined' && google.maps) {
-        initMap();
-    }
-});
+
 
 // Menu item hover effects
 menuItems.forEach(item => {

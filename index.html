@@ -109,8 +109,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Replace YOUR_API_KEY with your actual Google Maps API key -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+
 </head>
 <body>
     <!-- Header -->
@@ -174,12 +173,13 @@
             </div>
             <div class="hero-map">
                 <div class="map-container">
-                    <div id="restaurantMap" class="google-map"></div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d7923.112150628093!2d107.1184818935791!3d-6.823718400000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sraosan%20deui%20cianjur!5e0!3m2!1sid!2sid!4v1751353745677!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="google-map"></iframe>
                     <div class="map-overlay">
                         <div class="map-info">
                             <h3>📍 WARUNG NASI RAOSAN DEUI</h3>
-                            <p><strong>Cabang Utama Bandung</strong><br>Jl. Cihampelas No. 123, Bandung</p>
-                            <button class="btn btn-map" onclick="openDirections()">
+                            <p><strong>Cabang Ke-2</strong><br>Jl. KH Abdullah Bin Nuh BLK Cianjur.
+                                Samping Eiger</p>
+                            <button class="btn btn-map" onclick="window.open('https://www.google.com/maps/place/raosan+deui+cianjur/@-6.823718,107.1184819,15z/data=!3m1!4b1!4m6!3m5!1s0x2e69cf94a7f8a5b7:0x1234567890abcdef!8m2!3d-6.823718!4d107.1184819!16s%2Fg%2F11y123abc', '_blank')">
                                 <i class="fas fa-directions"></i> Petunjuk Arah
                             </button>
                         </div>
