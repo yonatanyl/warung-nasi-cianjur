@@ -7,12 +7,6 @@
       "use": "@vercel/static"
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -51,4 +45,4 @@
       "destination": "/index.html"
     }
   ]
-} 
+}
