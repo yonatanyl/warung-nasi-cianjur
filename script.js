@@ -191,7 +191,7 @@ function initMap() {
 
 // Open directions function
 function openDirections() {
-    const destination = "Jl. Cihampelas No. 123, Bandung, Jawa Barat";
+    const destination = "-6.8275124,107.1262816"; // Koordinat Warung Nasi Raosan Deui
     const url = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(destination)}`;
     window.open(url, '_blank');
 }
