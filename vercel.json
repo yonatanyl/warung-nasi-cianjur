@@ -38,5 +38,11 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/((?!.*\\.(css|js|png|jpg|jpeg|svg|ico|woff|woff2|ttf|eot)).*)",
+      "destination": "/index.html"
+    }
   ]
 }
