@@ -1,0 +1,33 @@
+{
+  "name": "warung-nasi-cianjur-raosan-deui",
+  "version": "1.0.0",
+  "description": "Warung Nasi Cianjur Raosan Deui - Restaurant website with authentic Sundanese cuisine from Cianjur",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve .",
+    "build": "echo 'Static site - no build required'"
+  },
+  "keywords": [
+    "warung-nasi-cianjur",
+    "restaurant-cianjur",
+    "kuliner-sunda",
+    "warung-nasi",
+    "cianjur-food",
+    "sundanese-cuisine",
+    "raosan-deui"
+  ],
+  "author": "Warung Nasi Raosan Deui",
+  "license": "MIT",
+  "homepage": "https://warung-nasi-cianjur-raosan-deui.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/warung-nasi-cianjur-raosan-deui.git"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "serve": "^14.0.0"
+  }
+} 
