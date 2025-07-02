@@ -338,6 +338,9 @@ p {
     display: flex;
     align-items: center;
     min-height: 300px;
+    /* Ensure stats are always visible */
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .stats-grid {
@@ -1247,6 +1250,10 @@ p {
         padding: 1.5rem 1rem;
         border-radius: 12px;
         text-align: center;
+        /* Ensure stats are always visible on mobile */
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        visibility: visible !important;
     }
 
     .stat-number {
@@ -1583,6 +1590,10 @@ p {
         border-radius: 15px;
         background: white;
         box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+        /* Ensure stats are always visible on mobile */
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        visibility: visible !important;
     }
 
     .stat-number {
@@ -1941,4 +1952,79 @@ p {
 
 @keyframes spin {
     to { transform: rotate(360deg); }
-} 
+}
+
+/* Force stats visibility on all devices */
+.stats,
+.stats-grid,
+.stat-item,
+.stat-number,
+.stat-label {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    transform: translateY(0) !important;
+}
+
+.stats {
+    display: flex !important;
+}
+
+.stats-grid {
+    display: grid !important;
+}
+
+/* Mobile-specific stats visibility */
+@media (max-width: 768px) {
+    .stats,
+    .stats-grid,
+    .stat-item {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+        animation: none !important;
+        display: block !important;
+    }
+    
+    .stats {
+        display: flex !important;
+        background: var(--primary-gradient) !important;
+    }
+    
+    .stats-grid {
+        display: grid !important;
+    }
+    
+    /* Override any potential conflicting mobile styles */
+    .mobile-device .stats,
+    .mobile-device .stats-grid,
+    .mobile-device .stat-item,
+    .mobile-device .stat-number,
+    .mobile-device .stat-label {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+        animation: none !important;
+        transition: all 0.3s ease !important;
+    }
+}
+
+/* Even more specific mobile targeting */
+@media (max-width: 480px) {
+    .stats,
+    .stats-grid,
+    .stat-item {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+        display: block !important;
+    }
+    
+    .stats {
+        display: flex !important;
+    }
+    
+    .stats-grid {
+        display: grid !important;
+    }
+}

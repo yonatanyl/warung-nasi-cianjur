@@ -2,6 +2,38 @@
 const navToggle = document.getElementById('nav-toggle');
 const navMenu = document.getElementById('nav-menu');
 
+// Immediate mobile stats visibility fix
+if (window.innerWidth <= 768) {
+    // Run immediately on script load for mobile
+    setTimeout(() => {
+        const mobileStats = document.querySelectorAll('.stat-item, .stats, .stats-grid');
+        mobileStats.forEach(el => {
+            if (el) {
+                el.style.cssText += `
+                    opacity: 1 !important;
+                    visibility: visible !important;
+                    transform: translateY(0) !important;
+                    display: block !important;
+                    animation: none !important;
+                `;
+            }
+        });
+        
+        const statsContainer = document.querySelector('.stats');
+        if (statsContainer) {
+            statsContainer.style.cssText += `
+                display: flex !important;
+                background: var(--primary-gradient) !important;
+            `;
+        }
+        
+        const statsGrid = document.querySelector('.stats-grid');
+        if (statsGrid) {
+            statsGrid.style.cssText += `display: grid !important;`;
+        }
+    }, 0);
+}
+
 if (navToggle && navMenu) {
     navToggle.addEventListener('click', () => {
         navMenu.classList.toggle('active');
@@ -419,12 +451,68 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe elements for scroll animations
-const animateElements = document.querySelectorAll('.about-item, .menu-item, .review-item, .location-item');
+const animateElements = document.querySelectorAll(
+    '.about-item, .menu-item, .review-item, .location-item, .stat-item'
+  );
 animateElements.forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'all 0.6s ease';
     observer.observe(el);
+});
+
+// Ensure stats are always visible on mobile
+const statsElements = document.querySelectorAll('.stat-item');
+const statsSection = document.querySelector('.stats');
+
+// Function to force stats visibility
+function forceStatsVisibility() {
+    statsElements.forEach(statEl => {
+        statEl.style.opacity = '1';
+        statEl.style.transform = 'translateY(0)';
+        statEl.style.transition = 'all 0.3s ease';
+        statEl.style.visibility = 'visible';
+        statEl.style.display = 'block';
+    });
+    
+    if (statsSection) {
+        statsSection.style.opacity = '1';
+        statsSection.style.visibility = 'visible';
+        statsSection.style.display = 'flex';
+    }
+}
+
+// Force stats visibility immediately
+forceStatsVisibility();
+
+// Add click handler to stats section to ensure it shows on click
+if (statsSection) {
+    statsSection.addEventListener('click', forceStatsVisibility);
+    
+    // Add touch events for mobile
+    statsSection.addEventListener('touchstart', forceStatsVisibility);
+    statsSection.addEventListener('touchend', forceStatsVisibility);
+    
+    // Force visibility on any interaction
+    statsSection.addEventListener('mouseenter', forceStatsVisibility);
+    statsSection.addEventListener('focus', forceStatsVisibility);
+}
+
+// Force visibility on multiple events
+window.addEventListener('load', forceStatsVisibility);
+window.addEventListener('resize', forceStatsVisibility);
+window.addEventListener('orientationchange', () => {
+    setTimeout(forceStatsVisibility, 100);
+});
+document.addEventListener('visibilitychange', forceStatsVisibility);
+
+// Force visibility on scroll for mobile
+let mobileStatsForced = false;
+window.addEventListener('scroll', () => {
+    if (window.innerWidth <= 768 && !mobileStatsForced) {
+        forceStatsVisibility();
+        mobileStatsForced = true;
+    }
 });
 
 // Phone number click to call functionality
@@ -500,6 +588,9 @@ window.addEventListener('scroll', debouncedScrollHandler);
 
 // Initialize page
 document.addEventListener('DOMContentLoaded', () => {
+    // Force stats visibility immediately on page load
+    forceStatsVisibility();
+    
     // Set initial active nav link
     updateActiveNavLink();
     
@@ -509,15 +600,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile-specific enhancements
     initMobileEnhancements();
     
+    // Force stats visibility again after page is fully loaded
+    setTimeout(forceStatsVisibility, 100);
+    
     console.log('Warung Nasi Raosan Deui website loaded successfully!');
 });
 
 // Mobile-specific enhancements
 function initMobileEnhancements() {
-    // Add mobile touch feedback
+    // Force stats visibility on mobile first
+    forceStatsVisibility();
+    
+    // Add mobile touch feedback (exclude stat items)
     const touchElements = document.querySelectorAll('.btn, .menu-tab, .nav-link, .menu-item, .location-item');
     
     touchElements.forEach(element => {
+        // Don't apply touch effects to stat items or stats section
+        if (element.closest('.stats') || element.classList.contains('stat-item')) {
+            return;
+        }
+        
         element.addEventListener('touchstart', () => {
             element.style.transform = 'scale(0.98)';
         });
@@ -612,10 +714,18 @@ function initMobileEnhancements() {
 
     // Mobile device detection and optimization
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const isMobileViewport = window.innerWidth <= 768;
     
-    if (isMobile) {
+    if (isMobile || isMobileViewport) {
         // Add mobile-specific class
         document.body.classList.add('mobile-device');
+        
+        // Force stats visibility specifically for mobile
+        setTimeout(() => {
+            forceStatsVisibility();
+            // Force again after a short delay
+            setTimeout(forceStatsVisibility, 500);
+        }, 100);
         
         // Optimize images for mobile
         const images = document.querySelectorAll('img');

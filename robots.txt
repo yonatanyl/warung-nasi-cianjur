@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Important pages for SEO
+Allow: /images/
+Allow: /favicon/
+Allow: /*.css
+Allow: /*.js
+
+# Sitemap location
+Sitemap: https://www.raosandeuicianjur.biz.id/sitemap.xml
+
+# Crawl-delay for better server performance
+Crawl-delay: 1 
