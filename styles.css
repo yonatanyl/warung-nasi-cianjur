@@ -135,6 +135,22 @@ p {
     padding: 0 24px;
 }
 
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-image {
+    height: 100px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-image:hover {
+    transform: scale(1.05);
+}
+
 .nav-logo h2 {
     font-size: 1.5rem;
     color: var(--primary-color);
@@ -1124,6 +1140,14 @@ p {
         display: none;
     }
 
+    .logo-image {
+        height: 40px;
+    }
+
+    .nav-logo h2 {
+        font-size: 1.3rem;
+    }
+
     .nav-toggle {
         display: flex;
         flex-direction: column;
@@ -1502,6 +1526,15 @@ p {
     .container,
     .nav-container {
         padding: 0 1rem;
+    }
+
+    .logo-image {
+        height: 35px;
+    }
+
+    .nav-logo h2 {
+        font-size: 1.1rem;
+        line-height: 1.1;
     }
 
     .section-header {
