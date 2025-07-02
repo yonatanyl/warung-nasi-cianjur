@@ -1588,7 +1588,7 @@ p {
     .stat-item {
         padding: 2rem 1.5rem;
         border-radius: 15px;
-        background: white;
+        background: var(--primary-color);
         box-shadow: 0 6px 25px rgba(0,0,0,0.08);
         /* Ensure stats are always visible on mobile */
         opacity: 1 !important;
