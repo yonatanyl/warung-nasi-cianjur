@@ -2,6 +2,61 @@
 const navToggle = document.getElementById('nav-toggle');
 const navMenu = document.getElementById('nav-menu');
 
+// Welcome Popup Elements
+const welcomePopup = document.getElementById('welcomePopup');
+const closePopupBtn = document.getElementById('closePopup');
+
+// Welcome Popup Functionality
+function showWelcomePopup() {
+    if (welcomePopup) {
+        welcomePopup.classList.add('show');
+        document.body.style.overflow = 'hidden';
+        
+        // Auto-close after 5 seconds
+        setTimeout(() => {
+            hideWelcomePopup();
+        }, 5000);
+    }
+}
+
+function hideWelcomePopup() {
+    if (welcomePopup) {
+        welcomePopup.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+}
+
+// Initialize popup when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    // Small delay to ensure page is fully loaded
+    setTimeout(() => {
+        showWelcomePopup();
+    }, 500);
+});
+
+// Close popup when close button is clicked
+if (closePopupBtn) {
+    closePopupBtn.addEventListener('click', () => {
+        hideWelcomePopup();
+    });
+}
+
+// Close popup when clicking on overlay (outside the image)
+if (welcomePopup) {
+    welcomePopup.addEventListener('click', (e) => {
+        if (e.target === welcomePopup) {
+            hideWelcomePopup();
+        }
+    });
+}
+
+// Close popup with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && welcomePopup && welcomePopup.classList.contains('show')) {
+        hideWelcomePopup();
+    }
+});
+
 // Immediate mobile stats visibility fix
 if (window.innerWidth <= 768) {
     // Run immediately on script load for mobile
