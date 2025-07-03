@@ -135,23 +135,29 @@ navLinks.forEach(link => {
     });
 });
 
-// Smooth scrolling for navigation links
+// Smooth scrolling for navigation links (only for same-page anchors)
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-        e.preventDefault();
         const targetId = link.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
         
-        if (targetSection) {
-            const offsetTop = targetSection.offsetTop - 80; // Account for fixed header
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
+        // Only prevent default and do smooth scrolling for same-page anchor links
+        // Allow normal navigation for external pages (like index.html)
+        if (targetId.startsWith('#')) {
+            e.preventDefault();
+            const targetSection = document.querySelector(targetId);
             
-            // Update active nav link
-            updateActiveNavLink(link);
+            if (targetSection) {
+                const offsetTop = targetSection.offsetTop - 80; // Account for fixed header
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+                
+                // Update active nav link
+                updateActiveNavLink(link);
+            }
         }
+        // For external links (like index.html, other pages), let them work normally
     });
 });
 
