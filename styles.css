@@ -2731,3 +2731,633 @@ p {
         display: grid !important;
     }
 }
+
+/* ==========================================================
+   ENHANCED SEO & FAMILY RESTAURANT COMPONENTS
+   ========================================================== */
+
+/* Header Maps Button */
+.nav-maps-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--white);
+    background: var(--secondary-gradient);
+    padding: 10px 18px;
+    border-radius: 25px;
+    box-shadow: var(--professional-shadow);
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+}
+
+.nav-maps-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(201, 35, 31, 0.3);
+    color: var(--white);
+}
+
+/* Hero Tagline & Trust Badges */
+.hero-tagline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(62, 148, 165, 0.1);
+    color: var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 13.5px;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    border: 1px solid rgba(62, 148, 165, 0.2);
+    letter-spacing: 0.2px;
+}
+
+.hero-tagline i {
+    color: #e67e22;
+}
+
+.hero-trust-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.trust-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-dark);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(62, 148, 165, 0.12);
+}
+
+.trust-badge i {
+    color: var(--primary-color);
+    font-size: 14px;
+}
+
+/* Family Restaurant Highlights Section */
+.family-section {
+    padding: 100px 0;
+    background: #ffffff;
+    position: relative;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 32px 24px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(62, 148, 165, 0.1);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--primary-gradient);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(62, 148, 165, 0.15);
+    border-color: rgba(62, 148, 165, 0.25);
+}
+
+.feature-card:hover::before {
+    opacity: 1;
+}
+
+.feature-icon-wrapper {
+    width: 58px;
+    height: 58px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(62, 148, 165, 0.12) 0%, rgba(42, 122, 135, 0.05) 100%);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon-wrapper {
+    background: var(--primary-gradient);
+    color: #ffffff;
+    transform: scale(1.08);
+}
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+}
+
+.feature-card p {
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--text-light);
+    margin-bottom: 0;
+}
+
+/* Facilities Grid Section */
+.facilities-section {
+    padding: 90px 0;
+    background: var(--bg-light);
+    position: relative;
+}
+
+.facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-top: 2.5rem;
+}
+
+.facility-item {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 24px 20px;
+    text-align: center;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.facility-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(62, 148, 165, 0.12);
+}
+
+.facility-item i {
+    font-size: 32px;
+    color: var(--secondary-color);
+    margin-bottom: 14px;
+    display: inline-block;
+}
+
+.facility-item h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.facility-item p {
+    font-size: 13.5px;
+    color: var(--text-light);
+    line-height: 1.55;
+    margin-bottom: 0;
+}
+
+/* SEO Culinary Guide Section */
+.seo-guide-section {
+    padding: 90px 0;
+    background: #ffffff;
+}
+
+.seo-guide-card {
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    border-radius: 18px;
+    padding: 44px;
+    border: 1px solid rgba(62, 148, 165, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.seo-guide-card h3 {
+    font-size: 1.6rem;
+    color: var(--text-dark);
+    margin-bottom: 18px;
+    font-weight: 700;
+}
+
+.seo-guide-card p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    color: #4a5568;
+    margin-bottom: 18px;
+}
+
+.seo-guide-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* FAQ Accordion Section */
+.faq-section {
+    padding: 100px 0;
+    background: var(--bg-light);
+}
+
+.faq-accordion {
+    max-width: 860px;
+    margin: 2.5rem auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq-item {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid rgba(62, 148, 165, 0.12);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: rgba(62, 148, 165, 0.3);
+}
+
+.faq-header {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 20px 24px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-dark);
+    gap: 16px;
+    transition: color 0.3s ease;
+}
+
+.faq-header:hover {
+    color: var(--primary-color);
+}
+
+.faq-item.active .faq-header {
+    color: var(--primary-color);
+}
+
+.faq-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(62, 148, 165, 0.1);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+    background: var(--primary-color);
+    color: #ffffff;
+}
+
+.faq-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #fafcfc;
+    border-top: 1px solid transparent;
+}
+
+.faq-item.active .faq-body {
+    max-height: 300px;
+    border-top-color: rgba(62, 148, 165, 0.08);
+}
+
+.faq-content {
+    padding: 18px 24px 22px;
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--text-light);
+}
+
+.faq-content p {
+    margin-bottom: 0;
+}
+
+/* Navigation Action Buttons */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-wa-btn {
+    background: #25D366;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 13.5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+}
+
+.nav-wa-btn:hover {
+    background: #1eb956;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
+    color: #ffffff;
+}
+
+.nav-maps-btn {
+    background: var(--secondary-gradient);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 13.5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(201, 35, 31, 0.25);
+}
+
+.nav-maps-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(201, 35, 31, 0.35);
+    color: #ffffff;
+}
+
+/* Menu Item Enhancements: Badges & WhatsApp Order */
+.menu-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(201, 35, 31, 0.92);
+    color: #ffffff;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.menu-badge.star {
+    background: linear-gradient(135deg, #e67e22, #d35400);
+}
+
+.menu-card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed rgba(62, 148, 165, 0.2);
+}
+
+.menu-order-wa {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #25D366;
+    color: #ffffff;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.menu-order-wa:hover {
+    background: #1eb956;
+    transform: scale(1.05);
+    color: #ffffff;
+}
+
+/* SEO Keyword Thematic Clusters Section */
+.seo-clusters-section {
+    padding: 90px 0;
+    background: #ffffff;
+}
+
+.seo-clusters-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.2rem;
+    margin-top: 2rem;
+}
+
+.cluster-card {
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid rgba(62, 148, 165, 0.15);
+    box-shadow: 0 8px 30px rgba(62, 148, 165, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.cluster-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(62, 148, 165, 0.16);
+    border-color: rgba(62, 148, 165, 0.35);
+}
+
+.cluster-header {
+    background: linear-gradient(135deg, #f7fbfc 0%, #eef6f7 100%);
+    padding: 24px 28px;
+    border-bottom: 1px solid rgba(62, 148, 165, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cluster-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cluster-badge {
+    background: var(--primary-gradient);
+    color: #ffffff;
+    font-size: 11.5px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+.cluster-content {
+    padding: 26px 28px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cluster-content p {
+    font-size: 14.5px;
+    line-height: 1.75;
+    color: var(--text-light);
+    margin-bottom: 16px;
+}
+
+.cluster-tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.cluster-tag {
+    background: #f1f8f9;
+    color: var(--primary-color);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(62, 148, 165, 0.2);
+}
+
+/* Floating Action Group (Dual Buttons: Maps & WhatsApp) */
+.floating-action-group {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    z-index: 999;
+}
+
+.floating-wa-btn {
+    background: #25D366;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 20px;
+    border-radius: 50px;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.floating-wa-btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
+    background: #1eb956;
+    color: #ffffff;
+}
+
+.floating-wa-btn i {
+    font-size: 18px;
+}
+
+.floating-directions-btn {
+    background: var(--secondary-gradient);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 20px;
+    border-radius: 50px;
+    box-shadow: 0 8px 25px rgba(201, 35, 31, 0.35);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.floating-directions-btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(201, 35, 31, 0.45);
+    color: #ffffff;
+}
+
+.floating-directions-btn i {
+    font-size: 17px;
+}
+
+@media (max-width: 768px) {
+    .nav-actions {
+        display: none;
+    }
+    
+    .floating-action-group {
+        bottom: 16px;
+        right: 14px;
+        gap: 8px;
+    }
+    
+    .floating-wa-btn,
+    .floating-directions-btn {
+        padding: 11px 16px;
+        font-size: 13px;
+    }
+    
+    .seo-clusters-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .seo-guide-card {
+        padding: 26px 20px;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .facilities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .facilities-grid {
+        grid-template-columns: 1fr;
+    }
+}

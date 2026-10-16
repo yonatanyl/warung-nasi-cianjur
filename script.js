@@ -26,13 +26,8 @@ function hideWelcomePopup() {
     }
 }
 
-// Initialize popup when page loads
-document.addEventListener('DOMContentLoaded', () => {
-    // Small delay to ensure page is fully loaded
-    setTimeout(() => {
-        showWelcomePopup();
-    }, 500);
-});
+// Grand Opening popup auto-display disabled (established family restaurant)
+// document.addEventListener('DOMContentLoaded', () => { ... });
 
 // Close popup when close button is clicked
 if (closePopupBtn) {
@@ -55,6 +50,31 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && welcomePopup && welcomePopup.classList.contains('show')) {
         hideWelcomePopup();
     }
+});
+
+// FAQ Accordion functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const header = item.querySelector('.faq-header');
+        if (header) {
+            header.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                if (isActive) {
+                    item.classList.remove('active');
+                } else {
+                    item.classList.add('active');
+                }
+            });
+        }
+    });
 });
 
 // Immediate mobile stats visibility fix
@@ -221,8 +241,8 @@ menuTabs.forEach(tab => {
         menuItems.forEach(item => {
             const itemCategory = item.getAttribute('data-category');
             if (category === 'semua' || itemCategory === category) {
-                item.style.display = 'block';
-                item.style.animation = 'fadeInUp 0.5s ease-out';
+                item.style.display = '';
+                item.style.animation = 'fadeInUp 0.4s ease-out';
             } else {
                 item.style.display = 'none';
             }
@@ -713,7 +733,7 @@ function initMobileEnhancements() {
     scrollToTopBtn.style.cssText = `
         position: fixed;
         bottom: 20px;
-        right: 20px;
+        left: 20px;
         width: 50px;
         height: 50px;
         background: var(--primary-color);
