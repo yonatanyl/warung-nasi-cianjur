@@ -3360,4 +3360,100 @@ p {
     .facilities-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Online Delivery Channels (ShopeeFood & GrabFood) */
+.online-delivery-box {
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(62, 148, 165, 0.15);
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.delivery-label {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.delivery-label i {
+    color: var(--primary-color);
+}
+
+.delivery-buttons {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.delivery-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 18px;
+    border-radius: 30px;
+    font-size: 13.5px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #ffffff !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.delivery-btn.shopeefood {
+    background: linear-gradient(135deg, #ee4d2d 0%, #ff5722 100%);
+    box-shadow: 0 4px 14px rgba(238, 77, 45, 0.35);
+}
+
+.delivery-btn.shopeefood:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(238, 77, 45, 0.5);
+}
+
+.delivery-btn.grabfood {
+    background: linear-gradient(135deg, #00B14F 0%, #008f40 100%);
+    box-shadow: 0 4px 14px rgba(0, 177, 79, 0.35);
+}
+
+.delivery-btn.grabfood:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 177, 79, 0.5);
+}
+
+/* Delivery Highlight Banner in Menu Section */
+.menu-delivery-banner {
+    background: linear-gradient(135deg, #fff5f2 0%, #f0faf4 100%);
+    border: 1.5px dashed #ff6b35;
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+    margin: 0 auto 2.5rem;
+    max-width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.delivery-banner-text h4 {
+    margin: 0 0 0.3rem 0;
+    color: #2c3e50;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.delivery-banner-text p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
 }
